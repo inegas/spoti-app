@@ -14,8 +14,9 @@ export class SpotifyService {
 
    getNewReleases(){
 
+    //Automatizar generacion del token, solo dura una hora.
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQCqWT6zSicvSKRFuME1xm7Cj-Mtyhsi7bC2486KrWdSIvdnPQpMp-P93aXeDefVH85NaT-UUc3CEC5JVNiW2cIKE5wcqmHZmYFSLZKnnW8qpQVb-13MfDiNHfhclHCkTxS61DSrh_YNHIILHqHMPjHLSG2tBDO4mA'
+      'Authorization': 'Bearer BQAT_e1qnIbmgt34n7FguUsVXxB3h-KEnwNcrm7HbAVtikCV7eSk9QdCYG8Q26WBeO-OAEQaxm4HPsByX0s'
     });
 
     return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=50', {headers});
