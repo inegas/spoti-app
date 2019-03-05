@@ -11,10 +11,10 @@ export class HomeComponent{
   newSongs:any[] = [];
 
   constructor(private spotify:SpotifyService, ) {
-    this.spotify.getNewReleases().subscribe((data:any) =>{
-      console.log(data.albums.items);
-       this.newSongs = data.albums.items;
-      
+    this.spotify.getNewReleases()
+    .subscribe( (data:any) =>{
+      console.log(data);
+       this.newSongs = data;
     });
   }
 
