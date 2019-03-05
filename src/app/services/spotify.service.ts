@@ -16,9 +16,9 @@ export class SpotifyService {
 
     //Automatizar generacion del token, solo dura una hora.
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAT_e1qnIbmgt34n7FguUsVXxB3h-KEnwNcrm7HbAVtikCV7eSk9QdCYG8Q26WBeO-OAEQaxm4HPsByX0s'
+      'Authorization': 'Bearer BQCr4pLT4EBmsQynSduEYCzxLc68lndc3V1t8uyuoBFRpPqNA8wE_UMu-xPnxAunoLKt59OUp-oKB1cuLyo'
     });
-
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=50', {headers});
+    //Ahora mismo muestra 21 por página.
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=21&offset=0', {headers});
    }
 }
