@@ -14,22 +14,33 @@ export class SpotifyService {
     console.log('servicio funcionando'); 
    }
 
-   getNewReleases(){
+   getQuery(query:string){
+     const url = `https://api.spotify.com/v1/${query}`;
 
-    //Automatizar generacion del token, solo dura una hora.
-    const headers = new HttpHeaders({
+     const headers = new HttpHeaders({
       'Authorization': 'Bearer BQC-lpWy6GMHuLJ4J6cZ_5sNg8dvieyic3tmeOKvPQNlLbwiJ40qDCNbO34MS0pSuIehg352R-2HZGCrQMk'
     });
-    //Ahora mismo muestra 21 por página.
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=21&offset=0', {headers})
+
+    return this.http.get(url, {headers});
+   }
+   //Ahora mismo muestra 21 por página.
+   getNewReleases(){
+    return this.getQuery('browse/new-releases?limit=21&offset=0')
     .pipe(map((data:any) => data.albums.items));
    }
 
-   getArtists(name:string){
+   getOtherQuery(query:string){
+    const url = `https://api.spotify.com/v1/${query}`;
+
     const headers = new HttpHeaders({
       'Authorization': 'Bearer BQC-lpWy6GMHuLJ4J6cZ_5sNg8dvieyic3tmeOKvPQNlLbwiJ40qDCNbO34MS0pSuIehg352R-2HZGCrQMk'
     });
-    return this.http.get(`https://api.spotify.com/v1/search?q=${name}&type=artist&limit=21`, {headers})
+    return this.http.get(url, {headers});
+   }
+
+   getArtists(name:string){
+    return this.getOtherQuery(`search?q=${name}&type=artist&limit=21`) 
     .pipe(map((data:any) => data.artists.items));
+    
    }
 }
