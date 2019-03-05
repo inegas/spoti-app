@@ -21,4 +21,11 @@ export class SpotifyService {
     //Ahora mismo muestra 21 por página.
     return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=21&offset=0', {headers});
    }
+
+   getArtists(name:string){
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer BQCr4pLT4EBmsQynSduEYCzxLc68lndc3V1t8uyuoBFRpPqNA8wE_UMu-xPnxAunoLKt59OUp-oKB1cuLyo'
+    });
+    return this.http.get(`https://api.spotify.com/v1/search?q=${name}&type=artist&limit=21`, {headers});
+   }
 }
