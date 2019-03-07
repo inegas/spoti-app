@@ -18,7 +18,8 @@
         <table class="table">
           <thead class="th">
               <tr>
-                  <th>Foto</th>
+                  <!--Th vacio, para no descuadrar la tabla-->
+                  <th></th>
                   <th>Album</th>
                   <th>Canción</th>
                   <th>Vista Previa</th>
@@ -31,7 +32,9 @@
               </td>
               <td>{{item.album.name}}</td>
               <td>{{item.name}}</td>
-              <td></td>
+              <td>
+                <audio [src]="item.preview_url" controls></audio>
+              </td>
             </tr>
           </tbody>
         </table>
