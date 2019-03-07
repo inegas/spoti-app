@@ -13,4 +13,28 @@
   <div class="col-4 text-right">
     <button type="button" class="btn btn-outline-light" [routerLink]="['/search']">Volver</button>
   </div>
+  <div class="row m-5">
+      <div class="col">
+        <table class="table">
+          <thead class="th">
+              <tr>
+                  <th>Foto</th>
+                  <th>Album</th>
+                  <th>Canción</th>
+                  <th>Vista Previa</th>
+                </tr>
+          </thead>
+          <tbody class="tb">
+            <tr *ngFor="let item of topTracks">
+              <td>
+                <img [src]="item.album.images | noimage" class="img-thumb" alt="">
+              </td>
+              <td>{{item.album.name}}</td>
+              <td>{{item.name}}</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </div>

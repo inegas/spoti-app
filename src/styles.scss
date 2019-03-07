@@ -31,8 +31,10 @@ hr {
 }
 
 .img-thumb {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 30px;
 }
 
 
@@ -63,4 +65,11 @@ hr {
 
 .fadeIn {
     animation-name: fadeIn;
+}
+
+.tb{
+    color: white;
+}
+.th{
+    color: white;
 }
