@@ -17,7 +17,7 @@ export class TarjetasComponent {
     if(item.type === 'artist'){
       artistId = item.id;
     }else {
-      artistId = item.artist[0].id;
+      artistId = item.id;
     }
     console.log('Id:' + artistId);
     
