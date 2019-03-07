@@ -11,6 +11,16 @@ export class TarjetasComponent {
 
   constructor() { }
 
-  
+  showArtist(item:any){
+    let artistId:string;
+    
+    if(item.type === 'artist'){
+      artistId = item.id;
+    }else {
+      artistId = item.artist[0].id;
+    }
+    console.log('Id:' + artistId);
+    
+  }
 
 }
