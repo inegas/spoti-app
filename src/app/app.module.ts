@@ -18,6 +18,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { TarjetasComponent } from './components/tarjetas/tarjetas.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 
 
@@ -38,7 +39,7 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [SpotifyService],
+  providers: [SpotifyService, TokenInterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
